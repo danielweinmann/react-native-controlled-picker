@@ -30,9 +30,9 @@ or
 | open | boolean | `false` | Whether the items modal is open or not |
 | items | array of objects | `[]` | Array of objects with `label` and `value` keys |
 | value | any | `null` | The value of the current selected item |
-| onPress | function | `undefined` | Function to be called when the user clicks on the picker |
-| onChange | function | `undefined` | Function to be called when the user selects an item |
-| onClose | function | `undefined` | Function to be called when the user request to close the modal |
+| onPress | function | | Function to be called when the user clicks on the picker |
+| onChange | function | | Function to be called when the user selects an item |
+| onClose | function | | Function to be called when the user request to close the modal |
 | style | function | `{}` | Additional style for the picker's container view |
 | textStyle | function | `{}` | Additional style for the picker's text |
 | modalStyle | function | `{}` | Additional style for the modal's container view |

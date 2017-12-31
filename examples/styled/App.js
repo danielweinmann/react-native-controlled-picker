@@ -7,7 +7,7 @@ export default class App extends Component {
     super(props, context)
     this.state = {
       language: 'js',
-      open: true,
+      open: false,
     }
     this.onChange = this.handleChange.bind(this)
     this.onPress = this.handlePress.bind(this)
