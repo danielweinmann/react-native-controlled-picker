@@ -1,45 +1,56 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Picker } from 'react-native-picker-controlled-picker'
+import { View } from 'react-native'
+import { Picker } from 'react-native-controlled-picker'
 
 export default class App extends Component {
   constructor(props, context) {
     super(props, context)
-    this.state = { language: 'js'  }
-    this.onValueChange = this.handleValueChange.bind(this)
+    this.state = {
+      language: 'js',
+      open: false,
+    }
+    this.onChange = this.handleChange.bind(this)
+    this.onPress = this.handlePress.bind(this)
+    this.onClose = this.handleClose.bind(this)
   }
 
-  handleValueChange(language) {
-    this.setState({ language })
+  handleChange(language) {
+    this.setState({ language, open: false })
+  }
+
+  handlePress() {
+    this.setState({ open: true })
+  }
+
+  handleClose() {
+    this.setState({ open: false })
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Picker
-          selectedValue={this.state.language}
-          onValueChange={this.onValueChange}
-          mode="dialog"
-          textStyle={styles.pickerText}
-        >
-          <Picker.Item label="JavaScript" value="js" />
-          <Picker.Item label="Ruby" value="ruby" />
-          <Picker.Item label="Python" value="python" />
-          <Picker.Item label="Elm" value="elm" />
-        </Picker>
+          value={this.state.language}
+          onChange={this.onChange}
+          onPress={this.onPress}
+          onClose={this.onClose}
+          open={this.state.open}
+          items={[
+            { value: 'js', label: 'JavaScript' },
+            { value: 'ruby', label: 'Ruby' },
+            { value: 'python', label: 'Python' },
+            { value: 'elm', label: 'Elm' },
+          ]}
+        />
       </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  pickerText: {
-    color: 'black',
-  }
-})
+}
