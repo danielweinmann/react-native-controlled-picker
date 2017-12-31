@@ -1,14 +1,15 @@
 import React from 'react'
 import { Modal as ReactNativeModal, FlatList } from 'react-native'
-import { TouchableOpacity, Dimensions } from 'react-native'
+import { TouchableOpacity, Dimensions, StatusBar } from 'react-native'
 
 import Item from './Item'
-import StatusBar from './StatusBar'
 
 const marginTop = (data, itemHeight = 32, listPadding = 20) => {
   const { height } = Dimensions.get('window')
   const count = data.length ? data.length : 0
-  return (height / 2) - (count * itemHeight / 2) - (listPadding / 2)
+  const itemsHeight = count * itemHeight
+  const statusHeight = StatusBar.currentHeight || 0
+  return (height / 2) - (itemsHeight / 2) - listPadding - statusHeight
 }
 
 const Modal = ({ open, data, style, listStyle, itemStyle, onClose }) => (
