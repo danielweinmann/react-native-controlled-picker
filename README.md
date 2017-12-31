@@ -1,13 +1,13 @@
-# react-native-picker-dropdown
-A dropdown that uses React Native's Picker for Android and ActionSheetIOS for iOS
+# react-native-controlled-picker
+A 100% controlled and declarative Picker for React Native
 
 ## Installation
 
-```yarn add react-native-picker-dropdown```
+```yarn add react-native-controlled-picker```
 
 or
 
-```npm install react-native-picker-dropdown --save```
+```npm install react-native-controlled-picker --save```
 
 ## Usage
 
@@ -23,13 +23,13 @@ The only exception is that we have 2 style props:
 
 ### Simplest example
 
-[Run this example on Expo](https://exp.host/@danielweinmann/react-native-picker-dropdown-simplest)
+[Run this example on Expo](https://exp.host/@danielweinmann/react-native-controlled-picker-simplest)
 
 [Read the source code](examples/simplest/App.js)
 
 ### Styled example
 
-[Run this example on Expo](https://exp.host/@danielweinmann/react-native-picker-dropdown-styled)
+[Run this example on Expo](https://exp.host/@danielweinmann/react-native-controlled-picker-styled)
 
 [Read the source code](examples/styled/App.js)
 

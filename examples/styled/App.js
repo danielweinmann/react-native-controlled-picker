@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Picker } from 'react-native-picker-dropdown'
+import { Picker } from 'react-native-controlled-picker'
 
 export default class App extends Component {
   constructor(props, context) {

@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "react-native-picker-dropdown styled example",
-    "description": "A styled example of react-native-picker-dropdown usage",
-    "slug": "react-native-picker-dropdown-styled",
+    "name": "react-native-controlled-picker styled example",
+    "description": "A styled example of react-native-controlled-picker usage",
+    "slug": "react-native-controlled-picker-styled",
     "privacy": "public",
     "sdkVersion": "24.0.0",
     "platforms": ["ios", "android"],
