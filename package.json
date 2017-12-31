@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/danielweinmann/react-native-controlled-picker/issues"
   },
-  "homepage": "https://github.com/danielweinmann/react-native-controlled-picker#readme"
+  "homepage": "https://github.com/danielweinmann/react-native-controlled-picker#readme",
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  }
 }

@@ -9,16 +9,6 @@ or
 
 ```npm install react-native-controlled-picker --save```
 
-## Usage
-
-It uses the exact same API as [React Native's Picker](https://facebook.github.io/react-native/docs/picker.html), but it shows a dropdown for iOS that opens an ActionSheetIOS with the items when clicked.
-
-The only exception is that we have 2 style props:
-
-1. `textStyle`: used to customize the text and the arrow icon of the Picker. On Android, the arrow icon does not change and other styles are also not applied due to limitations on React Native's `Picker` component.
-
-2. `style`: used to customize a view that we put around the picker.
-
 ## Examples
 
 ### Simplest example
@@ -32,6 +22,22 @@ The only exception is that we have 2 style props:
 [Run this example on Expo](https://exp.host/@danielweinmann/react-native-controlled-picker-styled)
 
 [Read the source code](examples/styled/App.js)
+
+## Props
+
+| Property | Type | Default | Description |
+|---------------|----------|--------------|----------------------------------------------------------------|
+| open | boolean | `false` | Whether the items modal is open or not |
+| items | array of objects | `[]` | Array of objects with `label` and `value` keys |
+| value | any | `null` | The value of the current selected item |
+| onPress | function | `undefined` | Function to be called when the user clicks on the picker |
+| onChange | function | `undefined` | Function to be called when the user selects an item |
+| onClose | function | `undefined` | Function to be called when the user request to close the modal |
+| style | function | `{}` | Additional style for the picker's container view |
+| textStyle | function | `{}` | Additional style for the picker's text |
+| modalStyle | function | `{}` | Additional style for the modal's container view |
+| listStyle | function | `{}` | Additional style for the list's container view |
+| itemStyle | function | `{}` | Additional style for the item's text |
 
 ## Contributing
 
