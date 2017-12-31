@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import {
-  Platform, View, TouchableOpacity, Text, StyleSheet, Modal, FlatList, StatusBar
-} from 'react-native'
+import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+import Modal from './Modal'
 
 export default class Picker extends Component {
   render() {
     const { style, textStyle, modalStyle, listStyle, itemStyle } = this.props
-    const { items, open, onPress, onChange } = this.props
+    const { items, open, onPress, onChange, onClose } = this.props
     const labels = items.map(item => item.label)
     const values = items.map(item => item.value)
 
@@ -18,11 +17,8 @@ export default class Picker extends Component {
       })
     )
 
-    const flatStyle = (style ? StyleSheet.flatten(style) : {})
-    const flatTextStyle = (textStyle ? StyleSheet.flatten(textStyle) : {})
-    const flatModalStyle = (modalStyle ? StyleSheet.flatten(modalStyle) : {})
-    const flatListStyle = (listStyle ? StyleSheet.flatten(listStyle) : {})
-    const flatItemStyle = (itemStyle ? StyleSheet.flatten(itemStyle) : {})
+    const flatStyle = style ? StyleSheet.flatten(style) : {}
+    const flatTextStyle = textStyle ? StyleSheet.flatten(textStyle) : {}
 
     const { value } = this.props
 
@@ -52,45 +48,13 @@ export default class Picker extends Component {
           ▼
         </Text>
         <Modal
-          visible={open}
-          animationType="slide"
-        >
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          {Platform.OS === 'android' && (
-            <View
-              style={{
-                height: 24,
-                backgroundColor: 'rgba(0,0,0,0.2)',
-              }}
-            />
-          )}
-          <View
-            style={[{
-              flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center',
-              paddingTop: 20,
-            }, flatModalStyle]}
-          >
-            <FlatList
-              data={data}
-              renderItem={({item}) => (
-                <TouchableOpacity onPress={item.onPress}>
-                  <Text style={[{
-                    padding: 10,
-                  }, flatItemStyle]}>
-                    {item.label}
-                  </Text>
-                </TouchableOpacity>
-              )}
-              style={[{
-                backgroundColor: 'white',
-                alignSelf: 'stretch',
-                padding: 20,
-              }, flatListStyle]}
-            />
-          </View>
-        </Modal>
+          open={open}
+          data={data}
+          onClose={onClose}
+          style={modalStyle ? StyleSheet.flatten(modalStyle) : {}}
+          listStyle={listStyle ? StyleSheet.flatten(listStyle) : {}}
+          itemStyle={itemStyle ? StyleSheet.flatten(itemStyle) : {}}
+        />
       </TouchableOpacity>
     )
   }
