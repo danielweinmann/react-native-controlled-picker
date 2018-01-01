@@ -6,7 +6,7 @@ export default class App extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      language: 'js',
+      language: null,
       open: false,
     }
     this.onChange = this.handleChange.bind(this)

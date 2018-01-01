@@ -5,6 +5,6 @@
     "expo": "^24.0.0",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
-    "react-native-controlled-picker": "0.0.1"
+    "react-native-controlled-picker": "0.1.0"
   }
 }
