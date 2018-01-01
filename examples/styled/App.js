@@ -6,7 +6,7 @@ export default class App extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      language: 'js',
+      language: null,
       open: false,
     }
     this.onChange = this.handleChange.bind(this)
@@ -37,6 +37,7 @@ export default class App extends Component {
           open={this.state.open}
           style={styles.picker}
           textStyle={styles.pickerText}
+          placeholderStyle={styles.pickerPlaceholder}
           modalStyle={styles.pickerModal}
           listStyle={styles.pickerList}
           itemStyle={styles.pickerItem}
@@ -69,6 +70,9 @@ const styles = {
   },
   pickerText: {
     color: 'white',
+  },
+  pickerPlaceholder: {
+    color: 'darkslategray',
   },
   pickerModal: {
     backgroundColor: 'coral',
