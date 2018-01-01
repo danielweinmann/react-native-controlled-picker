@@ -1,6 +1,6 @@
 {
   "name": "react-native-controlled-picker",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A 100% controlled and declarative Picker for React Native",
   "main": "index.js",
   "scripts": {
