@@ -30,11 +30,13 @@ or
 | open | boolean | `false` | Whether the items modal is open or not |
 | items | array of objects | `[]` | Array of objects with `label` and `value` keys |
 | value | any | `null` | The value of the current selected item |
+| placeholder | any | `'Please select...'` | Text to be displayed when there's no selected item |
 | onPress | function | | Function to be called when the user clicks on the picker |
 | onChange | function | | Function to be called when the user selects an item |
 | onClose | function | | Function to be called when the user request to close the modal |
 | style | function | `{}` | Additional style for the picker's container view |
 | textStyle | function | `{}` | Additional style for the picker's text |
+| placeholderStyle | function | `{}` | Additional style for the picker's placeholder |
 | modalStyle | function | `{}` | Additional style for the modal's container view |
 | listStyle | function | `{}` | Additional style for the list's container view |
 | itemStyle | function | `{}` | Additional style for the item's text |

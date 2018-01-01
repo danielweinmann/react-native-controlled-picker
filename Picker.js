@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import { TouchableOpacity, Text, StyleSheet } from 'react-native'
 
 import Modal from './Modal'
+import Placeholder from './Placeholder'
 
 class Picker extends Component {
   render() {
     const { value, items, open, onPress, onChange, onClose } = this.props
     const { style, textStyle, modalStyle, listStyle, itemStyle } = this.props
+    const { placeholder, placeholderStyle } = this.props
     const labels = items.map(item => item.label)
     const values = items.map(item => item.value)
+    const currentIndex = values.indexOf(value)
 
     const data = items.map(
       item => ({
@@ -39,12 +42,12 @@ class Picker extends Component {
           paddingHorizontal: 6,
         }, flatStyle]}
       >
-        <Text
-          style={[{ flex: 1 }, defaultTextStyle, textStyle]}
-        >
-          {labels[values.indexOf(value)]}
+        <Text style={[{ flex: 1 }, defaultTextStyle, textStyle]}>
+          {currentIndex > -1 ? labels[currentIndex] : (
+            <Placeholder style={placeholderStyle}>{placeholder}</Placeholder>
+          )}
         </Text>
-        <Text style={[{color: 'black'}, defaultTextStyle, flatTextStyle]}>
+        <Text style={[{ color: 'black' }, defaultTextStyle, flatTextStyle]}>
           ▼
         </Text>
         <Modal
@@ -69,11 +72,13 @@ Picker.propTypes = {
   open: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.object),
   value: PropTypes.any,
+  placeholder: PropTypes.string,
   onPress: PropTypes.func,
   onChange: PropTypes.func,
   onOpen: PropTypes.func,
   style: stylePropType,
   textStyle: stylePropType,
+  placeholderStyle: stylePropType,
   modalStyle: stylePropType,
   listStyle: stylePropType,
   itemStyle: stylePropType,
@@ -83,8 +88,10 @@ Picker.defaultProps = {
   open: false,
   items: [],
   value: null,
+  placeholder: 'Please select...',
   style: {},
   textStyle: {},
+  placeholderStyle: {},
   modalStyle: {},
   listStyle: {},
   itemStyle: {},
